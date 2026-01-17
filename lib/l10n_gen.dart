@@ -16,7 +16,7 @@ class L10nGenerator {
     'fr',
     'de',
     'hi',
-    'zh',
+    'zh-cn',
     'ar',
     'pt',
     'ja',
@@ -31,7 +31,7 @@ class L10nGenerator {
       : locales =
             requestedLocales.contains('all') ? allLocales : requestedLocales;
 
-Future<void> run() async {
+  Future<void> run() async {
     final file = File(inputPath);
     if (!file.existsSync()) {
       print('❌ Error: Input file not found: $inputPath');
@@ -39,7 +39,7 @@ Future<void> run() async {
     }
 
     final content = file.readAsStringSync();
-    
+
     // Parse the string into an AST (Abstract Syntax Tree)
     final result = parseString(content: content);
     final Map<String, String> translations = {};
@@ -61,7 +61,8 @@ Future<void> run() async {
     }
 
     if (translations.isEmpty) {
-      print('⚠️ No static strings found. Use: static const String key = "value";');
+      print(
+          '⚠️ No static strings found. Use: static const String key = "value";');
       return;
     }
 
@@ -69,9 +70,10 @@ Future<void> run() async {
     await _writeArbFiles(translations);
     _writeYaml();
     _writeExtension();
-    
+
     print('\n🚀 Success! Files generated and translated.');
   }
+
   Future<void> _writeArbFiles(Map<String, String> sourceData) async {
     final dir = Directory('lib/l10n');
     if (!dir.existsSync()) dir.createSync(recursive: true);

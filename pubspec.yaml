@@ -22,10 +22,7 @@ executables:
   l10n_gen: main
 
 dependencies:
-  args: ^2.4.0
   analyzer: ^6.0.0
   path: ^1.8.0
   http: ^1.1.0
-  translator: ^1.0.4 # Free Google Translate wrapper
-  watcher: ^1.2.1
-  # Optional: deepl_dart: ^2.0.0 (if you want DeepL support)
+  translator: ^1.0.4

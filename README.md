@@ -6,10 +6,9 @@ l10n_gen is a powerful CLI tool for Flutter developers that treats Dart files as
 
 - **Dart-as-Source**: No more manual JSON/ARB editing. Define strings in type-safe Dart classes.
 - **🤖 Auto-Translation**: Instantly translates your strings into target languages using Google Translate.
-- **🔄 Watch Mode**: Listens for changes in your Dart file and regenerates translations in real-time.
 - **Zero Config**: Automatically creates `l10n.yaml` and sets up the project structure.
 - **DX Extension**: Generates a BuildContext helper to use `context.l10n.variableName`.
-- **Global Reach**: Support for the top 15 global languages with a single `-l all` flag.
+- **Global Reach**: Support for 13 global languages with a single `-l all` flag.
 
 ## 📦 Installation
 
@@ -27,7 +26,7 @@ dependencies:
     sdk: flutter
   intl: any
 
-flutter:
+flutter:f
   generate: true # Required for Flutter's internal l10n tool
 ```
 
@@ -54,19 +53,11 @@ Run this command in your project root:
 # Generate for specific languages with auto-translation
 l10n_gen -i lib/constants/app_strings.dart -l es,fr,hi
 
-# OR generate for the top 15 global languages instantly
+# OR generate for the top 13 global languages instantly
 l10n_gen -i lib/constants/app_strings.dart -l all
 ```
 
-### 3. Enable Watch Mode (Optional)
-
-Keep your translations synced automatically as you type:
-
-```bash
-l10n_gen -i lib/constants/app_strings.dart -l es,fr --watch
-```
-
-### 4. Use in Flutter UI
+### 3. Use in Flutter UI
 
 The CLI generates a helper in `lib/l10n/l10n_extension.dart`.
 
@@ -81,7 +72,7 @@ Text(context.l10n.welcome)
 
 The `--locales all` flag generates and translates for:
 
-**en**, **es**, **fr**, **de**, **hi**, **zh**, **ar**, **pt**, **ja**, **ru**, **it**, **ko**, **tr**
+**en**, **es**, **fr**, **de**, **hi**, **zh-cn**, **ar**, **pt**, **ja**, **ru**, **it**, **ko**, **tr**
 
 ## 📄 Troubleshooting
 
