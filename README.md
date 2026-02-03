@@ -8,7 +8,7 @@ l10n_gen is a powerful CLI tool for Flutter developers that treats Dart files as
 - **🤖 Auto-Translation**: Instantly translates your strings into target languages using Google Translate.
 - **Zero Config**: Automatically creates `l10n.yaml` and sets up the project structure.
 - **DX Extension**: Generates a BuildContext helper to use `context.l10n.variableName`.
-- **Global Reach**: Support for 13 global languages with a single `-l all` flag.
+- **Global Reach**: Support for 136 global languages with a single `-l all` flag.
 
 ## 📦 Installation
 
