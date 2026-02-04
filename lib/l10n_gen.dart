@@ -1,8 +1,8 @@
+import 'dart:convert';
 import 'dart:io';
+
 import 'package:analyzer/dart/analysis/utilities.dart';
 import 'package:analyzer/dart/ast/ast.dart';
-import 'dart:convert';
-
 import 'package:translator/translator.dart';
 
 class L10nGenerator {
@@ -24,9 +24,142 @@ class L10nGenerator {
     // 'it',
     // 'ko',
     // 'tr'
-    'af', 'sq', 'am', 'ar', 'hy', 'as', 'ay', 'az', 'bm', 'eu', 'be', 'bn', 'bho', 'bs', 'bg', 'ca', 'ceb', 'zh-cn', 'zh-tw', 'co', 'hr', 'cs', 'da', 'dv', 'doi', 'nl', 'en', 'eo', 'et', 'ee', 'fil', 'fi', 'fr', 'fy', 'gaa', 'gl', 'ka', 'de', 'el', 'gn', 'gu', 'ht', 'ha', 'haw', 'iw', 'he', 'hi', 'hmn', 'hu', 'is', 'ig', 'ilo', 'id', 'ga', 'it', 'ja', 'jv', 'kn', 'kk', 'km', 'rw', 'gom', 'ko', 'kri', 'ku', 'ckb', 'ky', 'lo', 'la', 'lv', 'ln', 'lt', 'lg', 'lb', 'mk', 'mai', 'mg', 'ms', 'ml', 'mt', 'mi', 'mr', 'mni-mtei', 'lus', 'mn', 'my', 'ne', 'no', 'ny', 'or', 'om', 'ps', 'fa', 'pl', 'pt', 'pa', 'qu', 'ro', 'ru', 'sm', 'sa', 'gd', 'nso', 'sr', 'st', 'sn', 'sd', 'si', 'sk', 'sl', 'so', 'es', 'su', 'sw', 'sv', 'tl', 'tg', 'ta', 'tt', 'te', 'th', 'ti', 'ts', 'tr', 'tk', 'ak', 'uk', 'ur', 'ug', 'uz', 'vi', 'cy', 'xh', 'yi', 'yo', 'zu'
-
-
+    'af',
+    'sq',
+    'am',
+    'ar',
+    'hy',
+    'as',
+    'ay',
+    'az',
+    'bm',
+    'eu',
+    'be',
+    'bn',
+    'bho',
+    'bs',
+    'bg',
+    'ca',
+    'ceb',
+    'zh-cn',
+    'zh-tw',
+    'co',
+    'hr',
+    'cs',
+    'da',
+    'dv',
+    'doi',
+    'nl',
+    'en',
+    'eo',
+    'et',
+    'ee',
+    'fil',
+    'fi',
+    'fr',
+    'fy',
+    'gaa',
+    'gl',
+    'ka',
+    'de',
+    'el',
+    'gn',
+    'gu',
+    'ht',
+    'ha',
+    'haw',
+    'iw',
+    'he',
+    'hi',
+    'hmn',
+    'hu',
+    'is',
+    'ig',
+    'ilo',
+    'id',
+    'ga',
+    'it',
+    'ja',
+    'jv',
+    'kn',
+    'kk',
+    'km',
+    'rw',
+    'gom',
+    'ko',
+    'kri',
+    'ku',
+    'ckb',
+    'ky',
+    'lo',
+    'la',
+    'lv',
+    'ln',
+    'lt',
+    'lg',
+    'lb',
+    'mk',
+    'mai',
+    'mg',
+    'ms',
+    'ml',
+    'mt',
+    'mi',
+    'mr',
+    'mni-mtei',
+    'lus',
+    'mn',
+    'my',
+    'ne',
+    'no',
+    'ny',
+    'or',
+    'om',
+    'ps',
+    'fa',
+    'pl',
+    'pt',
+    'pa',
+    'qu',
+    'ro',
+    'ru',
+    'sm',
+    'sa',
+    'gd',
+    'nso',
+    'sr',
+    'st',
+    'sn',
+    'sd',
+    'si',
+    'sk',
+    'sl',
+    'so',
+    'es',
+    'su',
+    'sw',
+    'sv',
+    'tl',
+    'tg',
+    'ta',
+    'tt',
+    'te',
+    'th',
+    'ti',
+    'ts',
+    'tr',
+    'tk',
+    'ak',
+    'uk',
+    'ur',
+    'ug',
+    'uz',
+    'vi',
+    'cy',
+    'xh',
+    'yi',
+    'yo',
+    'zu'
   ];
 
   L10nGenerator(
@@ -35,6 +168,13 @@ class L10nGenerator {
             requestedLocales.contains('all') ? allLocales : requestedLocales;
 
   Future<void> run() async {
+    final libDir = Directory('lib');
+    if (!libDir.existsSync()) {
+      print(
+          '❌ Error: "lib" folder not found. Please run this from the root of a Flutter project.');
+      return;
+    }
+
     final file = File(inputPath);
     if (!file.existsSync()) {
       print('❌ Error: Input file not found: $inputPath');
