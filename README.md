@@ -47,14 +47,25 @@ class AppStrings {
 
 ### 2. Run the CLI
 
-Run this command in your project root:
+Run the tool in your terminal:
 
 ```bash
-# Generate for specific languages with auto-translation
-l10n_gen -i lib/constants/app_strings.dart -l es,fr,hi
+l10n_gen
+```
 
-# OR generate for the top 13 global languages instantly
-l10n_gen -i lib/constants/app_strings.dart -l all
+The CLI is interactive and will guide you through the process:
+
+```text
+🌍 Welcome to l10n_gen - Flutter Localization Generator
+
+📝 Enter language codes (comma-separated) or type "all" for all languages:
+   Examples: en,es,fr  OR  all
+   Available: en, es, fr, de, hi, zh-cn, ar, pt, ja, ru, it, ko, tr
+➤ en,hi,pa
+
+📂 Enter the path to your Dart file containing strings:
+   Examples: lib/constants/app_strings.dart  OR  example/apptexts.dart
+➤ lib/constants/app_strings.dart
 ```
 
 ### 3. Use in Flutter UI
