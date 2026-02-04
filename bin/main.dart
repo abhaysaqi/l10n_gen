@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:l10n_gen/l10n_gen.dart';
 
 void main() async {
@@ -8,7 +9,8 @@ void main() async {
   print(
       '📝 Enter language codes (comma-separated) or type "all" for all languages:');
   print('   Examples: en,es,fr  OR  all');
-  print('   Available: en, es, fr, de, hi, zh-cn, ar, pt, ja, ru, it, ko, tr');
+  print(
+      '   Available: af, sq, am, ar, hy, as, ay, az, bm, eu, be, bn, bho, bs, bg, ca, ceb, zh-cn, zh-tw, co, hr, cs, da, dv, doi, nl, en, eo, et, ee, fil, fi, fr, fy, gaa, gl, ka, de, el, gn, gu, ht, ha, haw, iw, he, hi, hmn, hu, is, ig, ilo, id, ga, it, ja, jv, kn, kk, km, rw, gom, ko, kri, ku, ckb, ky, lo, la, lv, ln, lt, lg, lb, mk, mai, mg, ms, ml, mt, mi, mr, mni-mtei, lus, mn, my, ne, no, ny, or, om, ps, fa, pl, pt, pa, qu, ro, ru, sm, sa, gd, nso, sr, st, sn, sd, si, sk, sl, so, es, su, sw, sv, tl, tg, ta, tt, te, th, ti, ts, tr, tk, ak, uk, ur, ug, uz, vi, cy, xh, yi, yo, zu');
   stdout.write('➤ ');
 
   final localesInput = stdin.readLineSync();
