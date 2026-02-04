@@ -11,16 +11,16 @@
 #   lints: ^6.0.0
 #   test: ^1.25.6
 
-name: l10n_gen
+name: easy_l10n_gen
 description: CLI to generate Flutter ARB files and config from Dart variables.
 version: 1.0.1
-repository: https://github.com/abhaysaqi/l10n_gen
+repository: https://github.com/abhaysaqi/easy_l10n_gen
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
 executables:
-  l10n_gen: main
+  easy_l10n_gen: main
 
 dependencies:
   analyzer: ^6.0.0

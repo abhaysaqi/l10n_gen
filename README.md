@@ -1,6 +1,6 @@
-# l10n_gen CLI
+# easy_l10n_gen CLI
 
-l10n_gen is a powerful CLI tool for Flutter developers that treats Dart files as the source of truth for localization. Define your strings as Dart variables, and let the CLI handle ARB generation, configuration, and even automatic translation.
+easy_l10n_gen is a powerful CLI tool for Flutter developers that treats Dart files as the source of truth for localization. Define your strings as Dart variables, and let the CLI handle ARB generation, configuration, and even automatic translation.
 
 ## ✨ Features
 
@@ -16,7 +16,7 @@ l10n_gen is a powerful CLI tool for Flutter developers that treats Dart files as
 
 **Option 1: Install from pub.dev**
 ```bash
-dart pub global activate l10n_gen
+dart pub global activate easy_l10n_gen
 ```
 
 **Option 2: Activate locally from source**
@@ -56,13 +56,13 @@ class AppStrings {
 Run the tool in your terminal:
 
 ```bash
-l10n_gen
+easy_l10n_gen
 ```
 
 The CLI is interactive and will guide you through the process:
 
 ```text
-🌍 Welcome to l10n_gen - Flutter Localization Generator
+🌍 Welcome to easy_l10n_gen - Flutter Localization Generator
 
 📝 Enter language codes (comma-separated) or type "all" for all languages:
    Examples: en,es,fr  OR  all

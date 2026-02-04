@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:l10n_gen/l10n_gen.dart';
+import 'package:easy_l10n_gen/easy_l10n_gen.dart';
 
 void main() async {
-  print('🌍 Welcome to l10n_gen - Flutter Localization Generator\n');
+  print('🌍 Welcome to easy_l10n_gen - Flutter Localization Generator\n');
 
   // Ask for language codes
   print(
