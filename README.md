@@ -14,6 +14,12 @@ l10n_gen is a powerful CLI tool for Flutter developers that treats Dart files as
 
 **Activate globally from your terminal:**
 
+**Option 1: Install from pub.dev**
+```bash
+dart pub global activate l10n_gen
+```
+
+**Option 2: Activate locally from source**
 ```bash
 dart pub global activate --source path .
 ```
