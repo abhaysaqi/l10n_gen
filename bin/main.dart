@@ -47,7 +47,7 @@ void main() async {
 
     print('\n${'=' * 60}');
     print('✅ Generation Complete!');
-    print('${'=' * 60}');
+    print('=' * 60);
     print('\n📦 Files Generated:');
     print('   • lib/l10n/app_*.arb files (${locales.length} languages)');
     print('   • lib/l10n/l10n_extension.dart (BuildContext helper)');
