@@ -13,7 +13,7 @@
 
 name: l10n_gen
 description: CLI to generate Flutter ARB files and config from Dart variables.
-version: 1.0.0
+version: 1.0.0+1
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -26,3 +26,7 @@ dependencies:
   path: ^1.8.0
   http: ^1.1.0
   translator: ^1.0.4
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
