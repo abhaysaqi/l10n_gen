@@ -1,6 +1,6 @@
 class AppTexts {
   static const String appName = "My Awesome App";
-  static const String version = "1.0.0";
+  static const String version = "1.0.3";
 
   /// Authentication
   static const String loginTitle = "Welcome Back";
