@@ -5,7 +5,7 @@ import 'package:easy_l10n_gen/easy_l10n_gen.dart';
 void main() async {
   print('🌍 Welcome to easy_l10n_gen - Flutter Localization Generator\n');
 
-  // Ask for language codes
+  /// Ask for language codes
   print(
       '📝 Enter language codes (comma-separated) or type "all" for all languages:');
   print('   Examples: en,es,fr  OR  all');
@@ -21,7 +21,7 @@ void main() async {
 
   final locales = localesInput.trim().split(',').map((e) => e.trim()).toList();
 
-  // Ask for file path
+  /// Ask for file path
   print('\n📂 Enter the path to your Dart file containing strings:');
   print(
       '   Examples: lib/constants/app_strings.dart  OR  example/apptexts.dart');

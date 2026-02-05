@@ -5,25 +5,19 @@ import 'package:analyzer/dart/analysis/utilities.dart';
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:translator/translator.dart';
 
+/// A generator class that parses Dart files to extract strings and generates
+/// ARB files and Flutter localization configuration.
 class L10nGenerator {
   final String inputPath;
+
+  /// The list of specific locales to generate.
+
+  /// If this list contains 'all', [allLocales] will be used.
   final List<String> locales;
   final GoogleTranslator _translator = GoogleTranslator();
 
+  /// A comprehensive list of supported language codes for translation.
   static const List<String> allLocales = [
-    // 'en',
-    // 'es',
-    // 'fr',
-    // 'de',
-    // 'hi',
-    // 'zh-cn',
-    // 'ar',
-    // 'pt',
-    // 'ja',
-    // 'ru',
-    // 'it',
-    // 'ko',
-    // 'tr'
     'af',
     'sq',
     'am',
@@ -162,6 +156,8 @@ class L10nGenerator {
     'zu'
   ];
 
+  /// inputPath is the location of the source Dart file.
+  /// requestedLocales is the list of language codes to generate.
   L10nGenerator(
       {required this.inputPath, required List<String> requestedLocales})
       : locales =
@@ -183,7 +179,7 @@ class L10nGenerator {
 
     final content = file.readAsStringSync();
 
-    // Parse the string into an AST (Abstract Syntax Tree)
+    /// Parse the string into an AST (Abstract Syntax Tree)
     final result = parseString(content: content);
     final Map<String, String> translations = {};
 
@@ -242,6 +238,7 @@ class L10nGenerator {
     }
   }
 
+  /// this function writes l10n.yaml file
   void _writeYaml() {
     File('l10n.yaml').writeAsStringSync('''arb-dir: lib/l10n
 template-arb-file: app_en.arb
@@ -249,6 +246,7 @@ output-localization-file: app_localizations.dart
 ''');
   }
 
+  /// this function writes l10n_extension.dart file
   void _writeExtension() {
     File('lib/l10n/l10n_extension.dart').writeAsStringSync('''
 import 'package:flutter/widgets.dart';
