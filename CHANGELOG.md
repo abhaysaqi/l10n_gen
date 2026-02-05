@@ -1,4 +1,4 @@
-## 1.0.1
+## 1.0.3
 
 - Improved package documentation by adding dartdoc comments to public APIs.
 - Added an example to demonstrate CLI usage.
