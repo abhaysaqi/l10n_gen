@@ -11,19 +11,6 @@ class L10nGenerator {
   final GoogleTranslator _translator = GoogleTranslator();
 
   static const List<String> allLocales = [
-    // 'en',
-    // 'es',
-    // 'fr',
-    // 'de',
-    // 'hi',
-    // 'zh-cn',
-    // 'ar',
-    // 'pt',
-    // 'ja',
-    // 'ru',
-    // 'it',
-    // 'ko',
-    // 'tr'
     'af',
     'sq',
     'am',
