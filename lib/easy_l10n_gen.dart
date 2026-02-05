@@ -170,7 +170,7 @@ class L10nGenerator {
 
     final content = file.readAsStringSync();
 
-    // Parse the string into an AST (Abstract Syntax Tree)
+    /// Parse the string into an AST (Abstract Syntax Tree)
     final result = parseString(content: content);
     final Map<String, String> translations = {};
 
